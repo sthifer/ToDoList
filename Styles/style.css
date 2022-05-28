@@ -16,12 +16,14 @@ button{
 }
 .todo{
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 .todo__div{
     border: 1px solid lightgray;
     padding: 10px;
     width: 300px;
+    display: inline-table;
 }
 .todo__div input{
     width: 100%;
