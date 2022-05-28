@@ -9,30 +9,26 @@ insert$$.addEventListener("keypress",function(event){
 const pintarToDo = () =>{
     divListaToDo$$.innerHTML = "";
     for (const key in listadoGlobal) {
-            const element = listadoGlobal[key];
-            let muestraTareas$$ = document.createElement('div');
-            muestraTareas$$.classList.add('todo__div');
-            muestraTareas$$.classList.add(`id-${element.id}`);
-            /* muestraTareas$$.innerHTML = `
-                <h3>${element.tarea}</h3>
-                <button onclick="EditarToDo(${key})">Editar</button>
-                <button onclick="eliminar(${key})">Eliminar</button>
-            `; */
-            const he$$ = document.createElement('h3');
-            he$$.innerText= element.tarea;
-            muestraTareas$$.appendChild(he$$);
+        const element = listadoGlobal[key];
+        let muestraTareas$$ = document.createElement('div');
+        muestraTareas$$.classList.add('todo__div');
+        muestraTareas$$.classList.add(`id-${element.id}`);
+        
+        const he$$ = document.createElement('h3');
+        he$$.innerText= element.tarea;
+        muestraTareas$$.appendChild(he$$);
 
-            const buttonSave$$ = document.createElement('button')
-            buttonSave$$.onclick = () => EditarToDo(key);
-            buttonSave$$.innerText = "Editar"
-            muestraTareas$$.appendChild(buttonSave$$);
+        const buttonSave$$ = document.createElement('button')
+        buttonSave$$.onclick = () => EditarToDo(key);
+        buttonSave$$.innerText = "Editar"
+        muestraTareas$$.appendChild(buttonSave$$);
 
-            const buttonRemove$$ = document.createElement('button')
-            buttonRemove$$.onclick = () => eliminar(key);
-            buttonRemove$$.innerText = "Eliminar"
-            muestraTareas$$.appendChild(buttonRemove$$);
+        const buttonRemove$$ = document.createElement('button')
+        buttonRemove$$.onclick = () => eliminar(key);
+        buttonRemove$$.innerText = "Eliminar"
+        muestraTareas$$.appendChild(buttonRemove$$);
 
-            divListaToDo$$.appendChild(muestraTareas$$);
+        divListaToDo$$.appendChild(muestraTareas$$);
     }
 
 }
